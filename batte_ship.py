@@ -1,11 +1,11 @@
 import random
 import os
 
-board = { 'A': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'B': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'C': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'D': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'E': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'F': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'G': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'H': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'I': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'J': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']}
-board_1 = { 'A': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'B': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'C': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'D': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'E': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'F': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'G': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'H': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'I': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'J': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']}
-board_2 = { 'A': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'B': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'C': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'D': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'E': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'F': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'G': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'H': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'I': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'J': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']}
-guess_board_1 = { 'A': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'B': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'C': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'D': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'E': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'F': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'G': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'H': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'I': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'J': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']}
-guess_board_2= { 'A': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'B': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'C': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'D': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'E': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'F': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'G': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'H': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'I': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 'J': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']}
+board = { 'A': [' ', ' ', ' ', ' ', ' '], 'B': [' ', ' ', ' ', ' ', ' '], 'C': [' ', ' ', ' ', ' ', ' '], 'D': [' ', ' ', ' ', ' ', ' '], 'E': [' ', ' ', ' ', ' ', ' ']}
+board_1 = { 'A': [' ', ' ', ' ', ' ', ' '], 'B': [' ', ' ', ' ', ' ', ' '], 'C': [' ', ' ', ' ', ' ', ' '], 'D': [' ', ' ', ' ', ' ', ' '], 'E': [' ', ' ', ' ', ' ', ' ']}
+board_2 = { 'A': [' ', ' ', ' ', ' ', ' '], 'B': [' ', ' ', ' ', ' ', ' '], 'C': [' ', ' ', ' ', ' ', ' '], 'D': [' ', ' ', ' ', ' ', ' '], 'E': [' ', ' ', ' ', ' ', ' ']}
+guess_board_1 = { 'A': [' ', ' ', ' ', ' ', ' '], 'B': [' ', ' ', ' ', ' ', ' '], 'C': [' ', ' ', ' ', ' ', ' '], 'D': [' ', ' ', ' ', ' ', ' '], 'E': [' ', ' ', ' ', ' ', ' ']}
+guess_board_2 = { 'A': [' ', ' ', ' ', ' ', ' '], 'B': [' ', ' ', ' ', ' ', ' '], 'C': [' ', ' ', ' ', ' ', ' '], 'D': [' ', ' ', ' ', ' ', ' '], 'E': [' ', ' ', ' ', ' ', ' ']}
 
 class Ships():
     
@@ -26,10 +26,10 @@ class Ships():
     def ship_len3(self):
        if self.opponent == 0:       
          self.ship_1 = []
-         abc = 'ABCDEFGHIJ'
-         abc_num = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H': 7, 'I': 8, 'J': 9}
+         abc = 'ABCDE'
+         abc_num = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4}
          start_colum = random.choices(abc)
-         start_row = random.randint(0, 9)      
+         start_row = random.randint(0, 4)      
          self.board[start_colum[0]][start_row] = 'X'
          position_one = self.board[start_colum[0]][start_row]
          for letter in abc_num:
@@ -37,7 +37,7 @@ class Ships():
                    c_num = abc_num[letter]
                    if start_colum[0] == 'A' or start_colum[0] == 'B':
                         second_colum = random.randint(c_num, c_num + 1)
-                   elif  start_colum[0] == 'J' or start_colum[0] == 'I':
+                   elif  start_colum[0] == 'E' or start_colum[0] == 'D':
                         second_colum = random.randint(c_num - 1, c_num)
                    else:
                         second_colum = random.randint(c_num - 1, c_num + 1)
@@ -49,7 +49,7 @@ class Ships():
                            third_row = start_row + 2
                            self.board[start_colum[0]][third_row] = 'X'
                            position_three = self.board[start_colum[0]][third_row]
-                       elif start_row == 9 or start_row == 8:
+                       elif start_row == 4 or start_row == 3:
                            second_row = start_row - 1
                            self.board[start_colum[0]][second_row] = 'X'
                            position_two = self.board[start_colum[0]][second_row]
@@ -97,16 +97,16 @@ class Ships():
        else:
          self.board_image()
          self.ship_1 = []
-         abc = 'ABCDEFGHIJ'
-         abc_num = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H': 7, 'I': 8, 'J': 9}
+         abc = 'ABCDE'
+         abc_num = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4}
          print('Choose your first colum and row for the 3 spaces ship:')
          start_colum = input('Colum:').upper()
          while start_colum not in abc:
              print('Invalid Colum. Please choose again: ')
              start_colum = input('Colum:').upper()
          start_row = input('Row: ')
-         while start_row.isnumeric() == False or int(start_row) not in range(1, 11):
-          print('Not a valid number. Please select a number between 1 - 9 for the row: ')
+         while start_row.isnumeric() == False or int(start_row) not in range(1, 6):
+          print('Not a valid number. Please select a number between 1 - 5 for the row: ')
           start_row = input('Row: ')
          else:
              start_row = int(start_row)
@@ -132,7 +132,7 @@ class Ships():
                           second_c_num = abc_num[letter]
          if start_colum == second_colum:
                second_row = input('Row: ')
-               while second_row.isnumeric() == False or int(second_row) not in range(1, 11) or (int(second_row) != start_row +1) and (int(second_row) != start_row - 1):
+               while second_row.isnumeric() == False or int(second_row) not in range(1, 6) or (int(second_row) != start_row +1) and (int(second_row) != start_row - 1):
                     print('Second row is invalid. Please select one of the rows next to it: ')
                     second_row = input('Second row: ')
                else:
@@ -143,7 +143,7 @@ class Ships():
                print('Your third colum will be ', third_colum)
                third_row = input("Select the last row of your ship: ")
                if second_row == start_row + 1:
-                while third_row.isnumeric() == False or int(third_row) not in range(1, 11) or (int(third_row) == second_row or int(third_row) == start_row) or (int(third_row) != start_row + 2 and int(third_row) != start_row - 1):
+                while third_row.isnumeric() == False or int(third_row) not in range(1, 6) or (int(third_row) == second_row or int(third_row) == start_row) or (int(third_row) != start_row + 2 and int(third_row) != start_row - 1):
                      print('Third row is invalid. Please select one of the rows next to it: ')
                      third_row = input("Select the last row of your ship: ")
 
@@ -152,7 +152,7 @@ class Ships():
                  self.board[third_colum][third_row - 1] ='X'
                  position_three = self.board[third_colum][third_row - 1]
                else:
-                while third_row.isnumeric() == False or int(third_row) not in range(1, 11) or (int(third_row) == second_row or int(third_row) == start_row) or (int(third_row) != start_row - 2 and int(third_row) != start_row + 1):
+                while third_row.isnumeric() == False or int(third_row) not in range(1, 6) or (int(third_row) == second_row or int(third_row) == start_row) or (int(third_row) != start_row - 2 and int(third_row) != start_row + 1):
                     print('Third row is invalid. Please select one of the rows next to it: ')
                     third_row = input("Select the last row of your ship: ")
                 else:
@@ -215,14 +215,14 @@ class Ships():
     def ship_len2(self):
        if self.opponent == 0:
          self.ship_2 = []
-         abc = 'ABCDEFGHIJ'
-         abc_num = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H': 7, 'I': 8, 'J': 9}
+         abc = 'ABCDE'
+         abc_num = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4}
          start_colum = random.choices(abc)
-         start_row = random.randint(0, 9)   
+         start_row = random.randint(0, 4)   
          start_position = self.board[start_colum[0]][start_row] 
          while start_position == 'X':
             start_colum = random.choices(abc)
-            start_row = random.randint(0, 9)   
+            start_row = random.randint(0, 4)   
             start_position = self.board[start_colum[0]][start_row]                     
          self.board[start_colum[0]][start_row] = 'X'
          position_one = self.board[start_colum[0]][start_row]
@@ -231,7 +231,7 @@ class Ships():
                    c_num = abc_num[letter]
                    if start_colum[0] == 'A':
                         second_colum = random.randint(c_num, c_num + 1)
-                   elif  start_colum[0] == 'J':
+                   elif  start_colum[0] == 'E':
                         second_colum = random.randint(c_num - 1, c_num)
                    else:
                         second_colum = random.randint(c_num - 1, c_num + 1)
@@ -244,7 +244,7 @@ class Ships():
                            if position_two == 'X':
                                if start_colum[0] == 'A':
                                   second_colum =  c_num + 1
-                               elif  start_colum[0] == 'J':
+                               elif  start_colum[0] == 'E':
                                   second_colum = c_num - 1
                                else:
                                   second_colum = random.randrange(c_num - 1, c_num + 2, 1) 
@@ -269,13 +269,13 @@ class Ships():
                                         self.board[second_colum_letter][start_row] = 'X'        
                            else:
                              self.board[start_colum[0]][second_row] = 'X'
-                       elif start_row == 9:
+                       elif start_row == 4:
                            second_row = start_row - 1
                            position_two = self.board[start_colum[0]][second_row]
                            if position_two == 'X':
                                if start_colum[0] == 'A':
                                   second_colum =  c_num + 1
-                               elif  start_colum[0] == 'J':
+                               elif  start_colum[0] == 'E':
                                   second_colum = c_num - 1
                                else:
                                   second_colum = random.randrange(c_num - 1, c_num + 2, 1) 
@@ -335,15 +335,15 @@ class Ships():
        else:
           self.board_image()
           self.ship_2 = []
-          abc = 'ABCDEFGHIJ'
-          abc_num = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H': 7, 'I': 8, 'J': 9}
+          abc = 'ABCDE'
+          abc_num = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4}
           print('Choose your first colum and row for the 2 spaces ship:')
           start_colum = input('Colum: ').upper()
           while start_colum not in abc:
              print('Invalid Colum. Please choose again: ')
              start_colum = input('Colum:').upper()
           start_row = input('Row: ')
-          while start_row.isnumeric() == False or int(start_row) not in range(1, 11):
+          while start_row.isnumeric() == False or int(start_row) not in range(1, 6):
              print('Invalid row. Please Choose again')
              start_row = input('Row: ')
           else:
@@ -356,7 +356,7 @@ class Ships():
              print('Invalid Colum. Please choose again: ')
              start_colum = input('Colum:').upper()
             start_row = input('Row: ')
-            while start_row.isnumeric() == False or int(start_row )not in range(1, 11):
+            while start_row.isnumeric() == False or int(start_row )not in range(1, 6):
              print('Invalid row. Please Choose again')
              start_row = input('Row: ')
             else:
@@ -384,7 +384,7 @@ class Ships():
                           second_c_num = abc_num[letter]
           if start_colum == second_colum:
                    second_row = input('Second row: test_1')
-                   while second_row.isnumeric() == False or int(second_row) not in range(1, 11) or (int(second_row) != start_row + 1) and (int(second_row) != start_row - 1):
+                   while second_row.isnumeric() == False or int(second_row) not in range(1, 6) or (int(second_row) != start_row + 1) and (int(second_row) != start_row - 1):
                      print('Second row is invalid. Please select one of the rows next to it: ')
                      second_row = input('Second row: test_2')
                    else:
@@ -417,7 +417,7 @@ class Ships():
                                   second_c_num = abc_num[letter]
                        if start_colum == second_colum:
                               second_row = input('Second row: ')
-                              while second_row.isnumeric() == False or int(second_row) not in range(1, 11) or (int(second_row) != start_row +1) and (int(second_row) != start_row - 1) :
+                              while second_row.isnumeric() == False or int(second_row) not in range(1, 6) or (int(second_row) != start_row +1) and (int(second_row) != start_row - 1) :
                                 print('Second row is invalid. Please select one of the rows next to it: ')
                                 second_row = input('Second row: ')
                               else:
@@ -440,13 +440,13 @@ class Ships():
     def ship_len1(self):
        if self.opponent == 0:
          self.ship_3 = []
-         abc = 'ABCDEFGHIJ'
+         abc = 'ABCDE'
          start_colum = random.choices(abc)
-         start_row = random.randint(0, 9)   
+         start_row = random.randint(0, 4)   
          start_position = self.board[start_colum[0]][start_row] 
          while start_position == 'X':   
             start_colum = random.choices(abc)
-            start_row = random.randint(0, 9)   
+            start_row = random.randint(0, 4)   
          start_position = self.board[start_colum[0]][start_row]
          self.board[start_colum[0]][start_row] = 'X'
          self.ship_3.append(start_position)
@@ -455,7 +455,7 @@ class Ships():
        else:
          self.board_image()
          self.ship_3 = []
-         abc = 'ABCDEFGHIJ'
+         abc = 'ABCDE'
          print('Choose your colum and row for the 1 spaces ship:')
          start_colum = input('Colum: ').upper()
          while start_colum not in abc:
@@ -463,8 +463,8 @@ class Ships():
              start_colum = input('Colum: ').upper()   
 
          start_row = input('Row: ')
-         while start_row.isnumeric() == False or int(start_row) not in range(1, 11):
-             print('Not a valid row. Please choose a number between 1 - 10')
+         while start_row.isnumeric() == False or int(start_row) not in range(1, 6):
+             print('Not a valid row. Please choose a number between 1 - 5')
              start_row = input('Row: ')
          else:
              start_row = int(start_row)   
@@ -477,8 +477,8 @@ class Ships():
              start_colum = input('Colum: ').upper()
 
             start_row = input('Row: ')
-            while start_row.isnumeric() == False or int(start_row) not in range(1, 11):
-              print('Not a valid row. Please choose a number between 1 - 10')
+            while start_row.isnumeric() == False or int(start_row) not in range(1, 6):
+              print('Not a valid row. Please choose a number between 1 - 5')
               start_row = input('Row: ')
             else:
              start_row = int(start_row)   
@@ -495,39 +495,25 @@ class Ships():
 
     def board_image(self):  
       
-      print('   |   A   |   B   |   C   |   D   |   E   |   F   |   G   |   H   |   I   |   J   | ')
-      print('   |_______|_______|_______|_______|_______|_______|_______|_______|_______|_______| ')
-      print('   |       |       |       |       |       |       |       |       |       |       | ')
-      print(' 1 |   {A0}   |   {B0}   |   {C0}   |   {D0}   |   {E0}   |   {F0}   |   {G0}   |   {H0}   |   {I0}   |   {J0}   | '.format(A0=self.board['A'][0], B0=self.board['B'][0], C0=self.board['C'][0], D0=self.board['D'][0], E0=self.board['E'][0], F0=self.board['F'][0], G0=self.board['G'][0], H0=self.board['H'][0], I0=self.board['I'][0], J0=self.board['J'][0]))
-      print('   |_______|_______|_______|_______|_______|_______|_______|_______|_______|_______| ')
-      print('   |       |       |       |       |       |       |       |       |       |       | ')
-      print(' 2 |   {A1}   |   {B1}   |   {C1}   |   {D1}   |   {E1}   |   {F1}   |   {G1}   |   {H1}   |   {I1}   |   {J1}   | '.format(A1=self.board['A'][1], B1=self.board['B'][1], C1=self.board['C'][1], D1=self.board['D'][1], E1=self.board['E'][1], F1=self.board['F'][1], G1=self.board['G'][1], H1=self.board['H'][1], I1=self.board['I'][1], J1=self.board['J'][1]))
-      print('   |_______|_______|_______|_______|_______|_______|_______|_______|_______|_______| ')
-      print('   |       |       |       |       |       |       |       |       |       |       | ')
-      print(' 3 |   {A2}   |   {B2}   |   {C2}   |   {D2}   |   {E2}   |   {F2}   |   {G2}   |   {H2}   |   {I2}   |   {J2}   | '.format(A2=self.board['A'][2], B2=self.board['B'][2], C2=self.board['C'][2], D2=self.board['D'][2], E2=self.board['E'][2], F2=self.board['F'][2], G2=self.board['G'][2], H2=self.board['H'][2], I2=self.board['I'][2], J2=self.board['J'][2]))
-      print('   |_______|_______|_______|_______|_______|_______|_______|_______|_______|_______| ')
-      print('   |       |       |       |       |       |       |       |       |       |       | ')
-      print(' 4 |   {A3}   |   {B3}   |   {C3}   |   {D3}   |   {E3}   |   {F3}   |   {G3}   |   {H3}   |   {I3}   |   {J3}   | '.format(A3=self.board['A'][3], B3=self.board['B'][3], C3=self.board['C'][3], D3=self.board['D'][3], E3=self.board['E'][3], F3=self.board['F'][3], G3=self.board['G'][3], H3=self.board['H'][3], I3=self.board['I'][3], J3=self.board['J'][3]))
-      print('   |_______|_______|_______|_______|_______|_______|_______|_______|_______|_______| ')
-      print('   |       |       |       |       |       |       |       |       |       |       | ')
-      print(' 5 |   {A4}   |   {B4}   |   {C4}   |   {D4}   |   {E4}   |   {F4}   |   {G4}   |   {H4}   |   {I4}   |   {J4}   | '.format(A4=self.board['A'][4], B4=self.board['B'][4], C4=self.board['C'][4], D4=self.board['D'][4], E4=self.board['E'][4], F4=self.board['F'][4], G4=self.board['G'][4], H4=self.board['H'][4], I4=self.board['I'][4], J4=self.board['J'][4]))
-      print('   |_______|_______|_______|_______|_______|_______|_______|_______|_______|_______| ')
-      print('   |       |       |       |       |       |       |       |       |       |       | ')
-      print(' 6 |   {A5}   |   {B5}   |   {C5}   |   {D5}   |   {E5}   |   {F5}   |   {G5}   |   {H5}   |   {I5}   |   {J5}   | '.format(A5=self.board['A'][5], B5=self.board['B'][5], C5=self.board['C'][5], D5=self.board['D'][5], E5=self.board['E'][5], F5=self.board['F'][5], G5=self.board['G'][5], H5=self.board['H'][5], I5=self.board['I'][5], J5=self.board['J'][5]))
-      print('   |_______|_______|_______|_______|_______|_______|_______|_______|_______|_______| ')
-      print('   |       |       |       |       |       |       |       |       |       |       | ')
-      print(' 7 |   {A6}   |   {B6}   |   {C6}   |   {D6}   |   {E6}   |   {F6}   |   {G6}   |   {H6}   |   {I6}   |   {J6}   | '.format(A6=self.board['A'][6], B6=self.board['B'][6], C6=self.board['C'][6], D6=self.board['D'][6], E6=self.board['E'][6], F6=self.board['F'][6], G6=self.board['G'][6], H6=self.board['H'][6], I6=self.board['I'][6], J6=self.board['J'][6]))
-      print('   |_______|_______|_______|_______|_______|_______|_______|_______|_______|_______| ')
-      print('   |       |       |       |       |       |       |       |       |       |       | ')
-      print(' 8 |   {A7}   |   {B7}   |   {C7}   |   {D7}   |   {E7}   |   {F7}   |   {G7}   |   {H7}   |   {I7}   |   {J7}   | '.format(A7=self.board['A'][7], B7=self.board['B'][7], C7=self.board['C'][7], D7=self.board['D'][7], E7=self.board['E'][7], F7=self.board['F'][7], G7=self.board['G'][7], H7=self.board['H'][7], I7=self.board['I'][7], J7=self.board['J'][7]))
-      print('   |_______|_______|_______|_______|_______|_______|_______|_______|_______|_______| ')
-      print('   |       |       |       |       |       |       |       |       |       |       | ')
-      print(' 9 |   {A8}   |   {B8}   |   {C8}   |   {D8}   |   {E8}   |   {F8}   |   {G8}   |   {H8}   |   {I8}   |   {J8}   | '.format(A8=self.board['A'][8], B8=self.board['B'][8], C8=self.board['C'][8], D8=self.board['D'][8], E8=self.board['E'][8], F8=self.board['F'][8], G8=self.board['G'][8], H8=self.board['H'][8], I8=self.board['I'][8], J8=self.board['J'][8]))
-      print('   |_______|_______|_______|_______|_______|_______|_______|_______|_______|_______| ')
-      print('   |       |       |       |       |       |       |       |       |       |       | ')
-      print('10 |   {A9}   |   {B9}   |   {C9}   |   {D9}   |   {E9}   |   {F9}   |   {G9}   |   {H9}   |   {I9}   |   {J9}   | '.format(A9=self.board['A'][9], B9=self.board['B'][9], C9=self.board['C'][9], D9=self.board['D'][9], E9=self.board['E'][9], F9=self.board['F'][9], G9=self.board['G'][9], H9=self.board['H'][9], I9=self.board['I'][9], J9=self.board['J'][9]))
-      print('   |_______|_______|_______|_______|_______|_______|_______|_______|_______|_______| ')
-      
+      print('   |   A   |   B   |   C   |   D   |   E   | ')
+      print('   |_______|_______|_______|_______|_______| ')
+      print('   |       |       |       |       |       | ')
+      print(' 1 |   {A0}   |   {B0}   |   {C0}   |   {D0}   |   {E0}   | '.format(A0=self.board['A'][0], B0=self.board['B'][0], C0=self.board['C'][0], D0=self.board['D'][0], E0=self.board['E'][0]))
+      print('   |_______|_______|_______|_______|_______| ')
+      print('   |       |       |       |       |       | ')
+      print(' 2 |   {A1}   |   {B1}   |   {C1}   |   {D1}   |   {E1}   | '.format(A1=self.board['A'][1], B1=self.board['B'][1], C1=self.board['C'][1], D1=self.board['D'][1], E1=self.board['E'][1]))
+      print('   |_______|_______|_______|_______|_______| ')
+      print('   |       |       |       |       |       | ')
+      print(' 3 |   {A2}   |   {B2}   |   {C2}   |   {D2}   |   {E2}   | '.format(A2=self.board['A'][2], B2=self.board['B'][2], C2=self.board['C'][2], D2=self.board['D'][2], E2=self.board['E'][2]))
+      print('   |_______|_______|_______|_______|_______| ')
+      print('   |       |       |       |       |       | ')
+      print(' 4 |   {A3}   |   {B3}   |   {C3}   |   {D3}   |   {E3}   | '.format(A3=self.board['A'][3], B3=self.board['B'][3], C3=self.board['C'][3], D3=self.board['D'][3], E3=self.board['E'][3]))
+      print('   |_______|_______|_______|_______|_______| ')
+      print('   |       |       |       |       |       | ')
+      print(' 5 |   {A4}   |   {B4}   |   {C4}   |   {D4}   |   {E4}   | '.format(A4=self.board['A'][4], B4=self.board['B'][4], C4=self.board['C'][4], D4=self.board['D'][4], E4=self.board['E'][4]))
+      print('   |_______|_______|_______|_______|_______| ')
+
+
 class Players():
   
   def __init__(self, ships, board, guess_board):
@@ -538,38 +524,23 @@ class Players():
            
   def guess_board_image(self):  
       
-      print('   |   A   |   B   |   C   |   D   |   E   |   F   |   G   |   H   |   I   |   J   | ')
-      print('   |_______|_______|_______|_______|_______|_______|_______|_______|_______|_______| ')
-      print('   |       |       |       |       |       |       |       |       |       |       | ')
-      print(' 1 |   {A0}   |   {B0}   |   {C0}   |   {D0}   |   {E0}   |   {F0}   |   {G0}   |   {H0}   |   {I0}   |   {J0}   | '.format(A0=self.guess_board['A'][0], B0=self.guess_board['B'][0], C0=self.guess_board['C'][0], D0=self.guess_board['D'][0], E0=self.guess_board['E'][0], F0=self.guess_board['F'][0], G0=self.guess_board['G'][0], H0=self.guess_board['H'][0], I0=self.guess_board['I'][0], J0=self.guess_board['J'][0]))
-      print('   |_______|_______|_______|_______|_______|_______|_______|_______|_______|_______| ')
-      print('   |       |       |       |       |       |       |       |       |       |       | ')
-      print(' 2 |   {A1}   |   {B1}   |   {C1}   |   {D1}   |   {E1}   |   {F1}   |   {G1}   |   {H1}   |   {I1}   |   {J1}   | '.format(A1=self.guess_board['A'][1], B1=self.guess_board['B'][1], C1=self.guess_board['C'][1], D1=self.guess_board['D'][1], E1=self.guess_board['E'][1], F1=self.guess_board['F'][1], G1=self.guess_board['G'][1], H1=self.guess_board['H'][1], I1=self.guess_board['I'][1], J1=self.guess_board['J'][1]))
-      print('   |_______|_______|_______|_______|_______|_______|_______|_______|_______|_______| ')
-      print('   |       |       |       |       |       |       |       |       |       |       | ')
-      print(' 3 |   {A2}   |   {B2}   |   {C2}   |   {D2}   |   {E2}   |   {F2}   |   {G2}   |   {H2}   |   {I2}   |   {J2}   | '.format(A2=self.guess_board['A'][2], B2=self.guess_board['B'][2], C2=self.guess_board['C'][2], D2=self.guess_board['D'][2], E2=self.guess_board['E'][2], F2=self.guess_board['F'][2], G2=self.guess_board['G'][2], H2=self.guess_board['H'][2], I2=self.guess_board['I'][2], J2=self.guess_board['J'][2]))
-      print('   |_______|_______|_______|_______|_______|_______|_______|_______|_______|_______| ')
-      print('   |       |       |       |       |       |       |       |       |       |       | ')
-      print(' 4 |   {A3}   |   {B3}   |   {C3}   |   {D3}   |   {E3}   |   {F3}   |   {G3}   |   {H3}   |   {I3}   |   {J3}   | '.format(A3=self.guess_board['A'][3], B3=self.guess_board['B'][3], C3=self.guess_board['C'][3], D3=self.guess_board['D'][3], E3=self.guess_board['E'][3], F3=self.guess_board['F'][3], G3=self.guess_board['G'][3], H3=self.guess_board['H'][3], I3=self.guess_board['I'][3], J3=self.guess_board['J'][3]))
-      print('   |_______|_______|_______|_______|_______|_______|_______|_______|_______|_______| ')
-      print('   |       |       |       |       |       |       |       |       |       |       | ')
-      print(' 5 |   {A4}   |   {B4}   |   {C4}   |   {D4}   |   {E4}   |   {F4}   |   {G4}   |   {H4}   |   {I4}   |   {J4}   | '.format(A4=self.guess_board['A'][4], B4=self.guess_board['B'][4], C4=self.guess_board['C'][4], D4=self.guess_board['D'][4], E4=self.guess_board['E'][4], F4=self.guess_board['F'][4], G4=self.guess_board['G'][4], H4=self.guess_board['H'][4], I4=self.guess_board['I'][4], J4=self.guess_board['J'][4]))
-      print('   |_______|_______|_______|_______|_______|_______|_______|_______|_______|_______| ')
-      print('   |       |       |       |       |       |       |       |       |       |       | ')
-      print(' 6 |   {A5}   |   {B5}   |   {C5}   |   {D5}   |   {E5}   |   {F5}   |   {G5}   |   {H5}   |   {I5}   |   {J5}   | '.format(A5=self.guess_board['A'][5], B5=self.guess_board['B'][5], C5=self.guess_board['C'][5], D5=self.guess_board['D'][5], E5=self.guess_board['E'][5], F5=self.guess_board['F'][5], G5=self.guess_board['G'][5], H5=self.guess_board['H'][5], I5=self.guess_board['I'][5], J5=self.guess_board['J'][5]))
-      print('   |_______|_______|_______|_______|_______|_______|_______|_______|_______|_______| ')
-      print('   |       |       |       |       |       |       |       |       |       |       | ')
-      print(' 7 |   {A6}   |   {B6}   |   {C6}   |   {D6}   |   {E6}   |   {F6}   |   {G6}   |   {H6}   |   {I6}   |   {J6}   | '.format(A6=self.guess_board['A'][6], B6=self.guess_board['B'][6], C6=self.guess_board['C'][6], D6=self.guess_board['D'][6], E6=self.guess_board['E'][6], F6=self.guess_board['F'][6], G6=self.guess_board['G'][6], H6=self.guess_board['H'][6], I6=self.board['I'][6], J6=self.guess_board['J'][6]))
-      print('   |_______|_______|_______|_______|_______|_______|_______|_______|_______|_______| ')
-      print('   |       |       |       |       |       |       |       |       |       |       | ')
-      print(' 8 |   {A7}   |   {B7}   |   {C7}   |   {D7}   |   {E7}   |   {F7}   |   {G7}   |   {H7}   |   {I7}   |   {J7}   | '.format(A7=self.guess_board['A'][7], B7=self.guess_board['B'][7], C7=self.guess_board['C'][7], D7=self.guess_board['D'][7], E7=self.guess_board['E'][7], F7=self.guess_board['F'][7], G7=self.guess_board['G'][7], H7=self.guess_board['H'][7], I7=self.guess_board['I'][7], J7=self.guess_board['J'][7]))
-      print('   |_______|_______|_______|_______|_______|_______|_______|_______|_______|_______| ')
-      print('   |       |       |       |       |       |       |       |       |       |       | ')
-      print(' 9 |   {A8}   |   {B8}   |   {C8}   |   {D8}   |   {E8}   |   {F8}   |   {G8}   |   {H8}   |   {I8}   |   {J8}   | '.format(A8=self.guess_board['A'][8], B8=self.guess_board['B'][8], C8=self.guess_board['C'][8], D8=self.guess_board['D'][8], E8=self.guess_board['E'][8], F8=self.guess_board['F'][8], G8=self.guess_board['G'][8], H8=self.guess_board['H'][8], I8=self.guess_board['I'][8], J8=self.guess_board['J'][8]))
-      print('   |_______|_______|_______|_______|_______|_______|_______|_______|_______|_______| ')
-      print('   |       |       |       |       |       |       |       |       |       |       | ')
-      print('10 |   {A9}   |   {B9}   |   {C9}   |   {D9}   |   {E9}   |   {F9}   |   {G9}   |   {H9}   |   {I9}   |   {J9}   | '.format(A9=self.guess_board['A'][9], B9=self.guess_board['B'][9], C9=self.guess_board['C'][9], D9=self.guess_board['D'][9], E9=self.guess_board['E'][9], F9=self.guess_board['F'][9], G9=self.guess_board['G'][9], H9=self.board['H'][9], I9=self.guess_board['I'][9], J9=self.guess_board['J'][9]))
-      print('   |_______|_______|_______|_______|_______|_______|_______|_______|_______|_______| ')
+      print('   |   A   |   B   |   C   |   D   |   E   | ')
+      print('   |_______|_______|_______|_______|_______| ')
+      print('   |       |       |       |       |       | ')
+      print(' 1 |   {A0}   |   {B0}   |   {C0}   |   {D0}   |   {E0}   | '.format(A0=self.guess_board['A'][0], B0=self.guess_board['B'][0], C0=self.guess_board['C'][0], D0=self.guess_board['D'][0], E0=self.guess_board['E'][0]))
+      print('   |_______|_______|_______|_______|_______| ')
+      print('   |       |       |       |       |       | ')
+      print(' 2 |   {A1}   |   {B1}   |   {C1}   |   {D1}   |   {E1}   | '.format(A1=self.guess_board['A'][1], B1=self.guess_board['B'][1], C1=self.guess_board['C'][1], D1=self.guess_board['D'][1], E1=self.guess_board['E'][1]))
+      print('   |_______|_______|_______|_______|_______| ')
+      print('   |       |       |       |       |       | ')
+      print(' 3 |   {A2}   |   {B2}   |   {C2}   |   {D2}   |   {E2}   | '.format(A2=self.guess_board['A'][2], B2=self.guess_board['B'][2], C2=self.guess_board['C'][2], D2=self.guess_board['D'][2], E2=self.guess_board['E'][2]))
+      print('   |_______|_______|_______|_______|_______| ')
+      print('   |       |       |       |       |       | ')
+      print(' 4 |   {A3}   |   {B3}   |   {C3}   |   {D3}   |   {E3}   | '.format(A3=self.guess_board['A'][3], B3=self.guess_board['B'][3], C3=self.guess_board['C'][3], D3=self.guess_board['D'][3], E3=self.guess_board['E'][3]))
+      print('   |_______|_______|_______|_______|_______| ')
+      print('   |       |       |       |       |       | ')
+      print(' 5 |   {A4}   |   {B4}   |   {C4}   |   {D4}   |   {E4}   | '.format(A4=self.guess_board['A'][4], B4=self.guess_board['B'][4], C4=self.guess_board['C'][4], D4=self.guess_board['D'][4], E4=self.guess_board['E'][4]))
+      print('   |_______|_______|_______|_______|_______| ')
 
  
   def attack(self, colum, row, other_player): # check for hits and output guess board
@@ -601,7 +572,7 @@ def attack_colum_row(count): # two players attack selection
        print('Not a valid colum, choose again:')
        colum = input('Colum: ').upper()
      row = input('Row: ')
-     while row.isnumeric() == False or int(row) not in range(1, 11):
+     while row.isnumeric() == False or int(row) not in range(1, 6):
        print('Not a valid row, choose again:')
        row = input('Row: ')
      row = int(row) - 1
@@ -618,7 +589,7 @@ def attack_colum_row(count): # two players attack selection
        print('Not a valid colum, choose again:')
        colum = input('Colum: ').upper()
      row = input('Row: ')
-     while row.isnumeric() == False or int(row) not in range(1, 11):
+     while row.isnumeric() == False or int(row) not in range(1, 6):
        row = input('Row: ')
      row = int(row) - 1
      player.attack(colum, row, other_player)
@@ -631,12 +602,12 @@ def end_game(): # check if there is a winner
     hits_2 = 0
     for key in guess_board_1.keys():
      for colum in key:
-       for row in range(0, 10):
+       for row in range(0, 5):
          if guess_board_1[colum][row] == 'Y':
           hits_1 += 1
     for key in guess_board_2.keys():
       for colum in key:
-       for row in range(0, 10):
+       for row in range(0, 5):
          if guess_board_2[colum][row] == 'Y':
            hits_2 += 1
  
